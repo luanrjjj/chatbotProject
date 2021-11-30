@@ -15,15 +15,16 @@ export class UsersRepository implements IUsersRepository {
 
   public async create({
     user_name,
-    user_email,
+    user_phone,
     user_cpf,
-    created_at,
+    user_surname,
   }: ICreateUserRepositoryDTO): Promise<Users> {
+    
     const User = this.ormRepository?.create({
       user_name,
-      user_email,
+      user_phone,
       user_cpf,
-      created_at,
+      user_surname,
     });
 
     await this.ormRepository.save(User);

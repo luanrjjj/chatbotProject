@@ -1,7 +1,8 @@
 export default interface ICreateUserDTO {
   user_name: string;
-  user_email: string;
+  user_phone: string;
   user_cpf: string;
-  cart: Object[];
-  created_at: Date;
+  user_surname:string;
+  user_password:string;
+
 }

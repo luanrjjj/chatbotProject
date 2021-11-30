@@ -3,7 +3,7 @@ import User from '../../typeorm/schemas/Users'
 import {v4} from 'uuid'
 import ICreateUserDTO from '@modules/users/useCases/createUser/ICreateUserDTO';
 
-class UsersRepository implements IUsersRepository {
+class FakeUsersRepository implements IUsersRepository {
 
     private users:User[] = []
 
@@ -22,3 +22,5 @@ class UsersRepository implements IUsersRepository {
 
     
 }
+
+export default FakeUsersRepository

@@ -16,11 +16,13 @@ export default class Users {
   user_name: string;
 
   @Column('string')
-  user_email: string;
+  user_surname: string;
 
   @Column('string')
   user_cpf: string;
 
-  @CreateDateColumn('date')
-  created_at?: Date;
+  @Column('string')
+  user_phone: string;
+
+  
 }
