@@ -7,6 +7,6 @@
     "port": 27017,
     "database": "challengeDevnology",
     "useUnifiedTopology": true,
-    "entities": ["src/modules/statements/typeorm/schemas/*.ts"]
+    "entities": ["src/modules/Users/typeorm/schemas/*.ts"]
   }
 ]

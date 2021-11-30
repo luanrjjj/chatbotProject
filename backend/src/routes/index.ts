@@ -1,12 +1,12 @@
 import { Router } from 'express';
-import { CreateStatementController } from '../modules/statements/useCases/createStatement/CreateStatementController';
+import { CreateUserController } from '../modules/users/useCases/createUser/CreateUserController';
 
-const createStatementController = new CreateStatementController()
+const createUserController = new CreateUserController()
 
 const router = Router();
 
 
-router.post('/statement',createStatementController.execute);
+router.post('/User',createUserController.execute);
 
 
 export { router };

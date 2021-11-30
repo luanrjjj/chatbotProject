@@ -7,8 +7,8 @@ import {
 } from "typeorm";
 import { v4 as uuid } from "uuid";
 
-@Entity("Statements")
-export default class Statements {
+@Entity("Users")
+export default class Users {
   @ObjectIdColumn()
   id: ObjectID;
 
@@ -20,9 +20,6 @@ export default class Statements {
 
   @Column('string')
   user_cpf: string;
-
-  @Column("jsonb", { nullable: true })
-  cart?: Object[];
 
   @CreateDateColumn('date')
   created_at?: Date;
