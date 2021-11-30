@@ -1,0 +1,12 @@
+[
+  
+  {
+    "name": "mongo",
+    "type": "mongodb",
+    "host": "localhost",
+    "port": 27017,
+    "database": "challengeDevnology",
+    "useUnifiedTopology": true,
+    "entities": ["src/modules/statements/typeorm/schemas/*.ts"]
+  }
+]
