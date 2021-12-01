@@ -23,7 +23,7 @@ export class FindUserUseCase {
     const User = await this.UserRepository.findUserByCpf(user_cpf)
 
     if(!User) {
-        return new AppError ('Email adress alredy used')
+        return new AppError ('User Not Found')
     }
     return User;
   }

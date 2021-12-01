@@ -12,6 +12,7 @@ app.use(cors());
 app.use(express.json());
 
 app.post('/createUser', router);
+app.post('/findUser', router);
 
 
 app.get('/',(request:Request,response:Response)=> {

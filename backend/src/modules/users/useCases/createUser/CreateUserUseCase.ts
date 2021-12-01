@@ -30,7 +30,7 @@ export class CreateUserUseCase {
     const checkUserExists = await this.UserRepository.findUserByCpf(user_cpf)
 
     if(checkUserExists) {
-        return new AppError ('Email adress alredy used')
+        return new AppError ('CPF alredy used')
     }
 
      const hashedPassword = await this.hashProvider?.generateHash(user_password)
