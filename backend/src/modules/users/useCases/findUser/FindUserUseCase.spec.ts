@@ -42,7 +42,7 @@ describe('CreateUser',()=> {
             '88522633910'
         )
 
-        expect(userFound).resolves.toBeInstanceOf(AppError)
+         expect(userFound).toBeInstanceOf(AppError)
    
 })
 })
