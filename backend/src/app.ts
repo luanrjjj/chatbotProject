@@ -14,6 +14,7 @@ app.use(express.json());
 app.post('/createUser', router);
 app.post('/findUser', router);
 app.post('/deleteUser', router);
+app.post('/listUsers', router);
 
 app.get('/',(request:Request,response:Response)=> {
     return response.json({message:'Hello Gold;'});
