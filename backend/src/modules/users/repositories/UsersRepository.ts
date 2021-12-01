@@ -75,6 +75,11 @@ export class UsersRepository implements IUsersRepository {
   public async findAllUsers(except_user_id:string):Promise<User[]|undefined> {
 
     let users:User[]
+    users = await this.ormRepository.find()
+
+    return users
+
+    /*
     if (except_user_id) {
         users=await this.ormRepository.find({
             where: {
@@ -84,9 +89,8 @@ export class UsersRepository implements IUsersRepository {
     
 } else {
     users = await this.ormRepository.find();
-}
+}*/
 
-return users
 
 
   }
