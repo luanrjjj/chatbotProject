@@ -59,7 +59,19 @@ export class UsersRepository implements IUsersRepository {
  
   }
   
- 
+  public async deleteUserByCpf(user_cpf:string):Promise<User|undefined> {
+
+    const user = await this.ormRepository.findOne({
+    where: {
+      user_cpf:user_cpf
+    }
+    })
+    if (user) {
+   await this.ormRepository.delete(user?.id)
+    }
+
+    return 
+}
   public async findAllUsers(except_user_id:string):Promise<User[]|undefined> {
 
     let users:User[]

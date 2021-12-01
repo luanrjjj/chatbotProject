@@ -31,6 +31,22 @@ class FakeUsersRepository implements IUsersRepository {
         return this.users
 
     }
+
+    public async deleteUserByCpf(user_cpf:string):Promise<User|undefined> {
+
+        const user = await this.users.find(user=> {user.user_cpf===user_cpf})
+
+        if (user) {
+            this.users = this.users.filter(function(value,index,arr){
+                return value.user_cpf!=user.user_cpf
+            })   
+        }
+        const userDeleted = await this.users.find(user=> {user.user_cpf===user_cpf})
+        
+        
+        return userDeleted
+        
+    }
     
 }
 
