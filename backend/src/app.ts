@@ -11,7 +11,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-app.post('/User', router);
+app.post('/createUser', router);
 
 
 app.get('/',(request:Request,response:Response)=> {

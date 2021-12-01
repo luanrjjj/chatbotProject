@@ -5,8 +5,8 @@
     "type": "mongodb",
     "host": "localhost",
     "port": 27017,
-    "database": "challengeDevnology",
+    "database": "challengeBlueLab",
     "useUnifiedTopology": true,
-    "entities": ["src/modules/Users/typeorm/schemas/*.ts"]
+    "entities": ["src/modules/users/typeorm/schemas/*.ts"]
   }
 ]

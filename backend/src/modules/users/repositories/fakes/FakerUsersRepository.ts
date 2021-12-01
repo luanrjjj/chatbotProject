@@ -7,9 +7,6 @@ class FakeUsersRepository implements IUsersRepository {
 
     private users:User[] = []
 
-
-
-
     public async create(userData:ICreateUserDTO):Promise<User> {
         const user = new User()
 
@@ -20,6 +17,16 @@ class FakeUsersRepository implements IUsersRepository {
         return user
     }
 
+    public async findUserByCpf(user_cpf:string):Promise<User|undefined> {
+         const user = this.users.find(user=> user.user_cpf===user_cpf)
+        return user
+    }
+
+    public async findAllUsers(except_user_id:string):Promise<User[]|undefined> {
+        
+        return this.users
+
+    }
     
 }
 

@@ -38,7 +38,7 @@ describe('CreateUser',()=> {
             user_password:'123456'
         })
 
-        expect(createUser.execute({
+       await expect(createUser.execute({
             user_name:'John',
             user_cpf:'88522633910',
             user_phone:'(11)968552211',
