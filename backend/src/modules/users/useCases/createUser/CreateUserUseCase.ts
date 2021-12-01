@@ -6,6 +6,8 @@ import {IUsersRepository} from "../../repositories/IUsersRepository";
 import ICreateUserDTO from "./ICreateUserDTO";
 import IHashProvider from "../../providers/HashProvider/models/IHashProvider";
 
+import AppError from '../../../../Errors/AppError';
+
 @injectable()
 export class CreateUserUseCase {
   constructor(
@@ -16,7 +18,7 @@ export class CreateUserUseCase {
     private hashProvider:IHashProvider,
   ) {}
 
-  async execute({
+  public async execute({
     user_name,
     user_surname,
     user_phone,
@@ -25,12 +27,20 @@ export class CreateUserUseCase {
   }: ICreateUserDTO) {
 
 
+    const checkUserExists = await this.UserRepository.findUserByCpf(user_cpf)
+
+    if(checkUserExists) {
+        return new AppError ('Email adress alredy used')
+    }
+
+     const hashedPassword = await this.hashProvider?.generateHash(user_password)
+
     const User= await this.UserRepository.create({
       user_name,
       user_surname,
       user_cpf,
       user_phone,
-      user_password
+      user_password:hashedPassword
       
     });
 

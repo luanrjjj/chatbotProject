@@ -24,5 +24,6 @@ export default class Users {
   @Column('string')
   user_phone: string;
 
-  
+  @Column('string')
+  user_password: string;
 }

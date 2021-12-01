@@ -20,8 +20,7 @@ export class CreateUserController {
   
     });
 
-    console.log(User)
 
-    return response.status(201).json(User);
+    return response.json(User);
   }
 }
